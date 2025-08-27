@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>REGISTRATION FORM</title>
+  <script>
+    function validateForm() {
+      const form = document.forms["regForm"];
+      const fname = form["fname"].value.trim();
+      const lname = form["lname"].value.trim();
+      const pw = form["pw"].value;
+      const cp = form["cp"].value;
+      const email = form["ename"].value.trim();
+      const phone = form["phn"].value.trim();
+      const terms = form["xx"].checked;
+
+      if (fname === "") {
+        alert("First name is required.");
+        form["fname"].focus();
+        return false;
+      }
+
+      if (lname === "") {
+        alert("Last name is required.");
+        form["lname"].focus();
+        return false;
+      }
+
+      if (pw === "") {
+        alert("Password is required.");
+        form["pw"].focus();
+        return false;
+      }
+
+      if (pw !== cp) {
+        alert("Passwords do not match.");
+        form["cp"].focus();
+        return false;
+      }
+
+      if (email === "") {
+        alert("Email is required.");
+        form["ename"].focus();
+        return false;
+      }
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        form["ename"].focus();
+        return false;
+      }
+
+      if (phone === "") {
+        alert("Phone number is required.");
+        form["phn"].focus();
+        return false;
+      }
+      const phonePattern = /^\d{10}$/;
+      if (!phonePattern.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        form["phn"].focus();
+        return false;
+      }
+
+      if (!terms) {
+        alert("You must agree to the terms and conditions.");
+        form["xx"].focus();
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</head>
+<body bgcolor="yellow">
+  <h2 align="center">ONLINE REGISTRATION</h2>
+  <hr align="center" width="100%" />
+  
+  <form name="regForm" onsubmit="return validateForm()">
+    <table align="center" cellspacing="20">
+      <tr>
+        <td align="right">First name:<font color="red"><sup>*</sup></font></td>
+        <td align="left"><input type="text" maxlength="40" size="35" name="fname" /></td>
+      </tr>
+      
+      <tr>
+        <td align="right">Last name:<font color="red"><sup>*</sup></font></td>
+        <td align="left"><input type="text" maxlength="40" size="35" name="lname" /></td>
+      </tr>
+      
+      <tr>
+        <td align="right">PassWord:<font color="red"><sup>*</sup></font></td>
+        <td align="left"><input type="password" maxlength="40" size="35" name="pw" /></td>
+      </tr>
+      
+      <tr>
+        <td align="right">Confirm Password:<font color="red"><sup>*</sup></font></td>
+        <td align="left"><input type="password" maxlength="40" size="35" name="cp" /></td>
+      </tr>
+      
+      <tr>
+        <td align="right">Gender:</td>
+        <td>
+          <input type="radio" name="sex" value="male" /> Male
+          <input type="radio" name="sex" value="female" /> Female
+        </td>
+      </tr>
+      
+      <tr>
+        <td align="right">DATE OF BIRTH:</td>
+        <td align="left">
+          <select name="dob">
+            <option value="x">Month</option>
+            <option value="j">JAN</option>
+            <option value="f">FEB</option>
+            <option value="m">MAR</option>
+            <option value="A">APR</option>
+            <option value="m2">MAY</option>
+            <option value="j2">JUN</option>
+            <option value="j3">JUL</option>
+            <option value="j4">AUG</option>
+            <option value="v">SEP</option>
+            <option value="o">OCT</option>
+            <option value="n">NOV</option>
+            <option value="d">DEC</option>
+          </select>
+
+          <select name="dob1">
+            <option value="v">DAY</option>
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3">03</option>
+            <option value="4">04</option>
+            <option value="5">05</option>
+            <option value="6">06</option>
+            <option value="7">07</option>
+            <option value="8">08</option>
+            <option value="9">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+          </select>
+
+          <select name="dob3">
+            <option value="ram">YEAR</option>
+            <option value="2010">2010</option>
+            <option value="2009">2009</option>
+            <option value="2008">2008</option>
+            <option value="2007">2007</option>
+            <option value="2006">2006</option>
+            <option value="2005">2005</option>
+            <option value="2004">2004</option>
+            <option value="2003">2003</option>
+          </select>
+        </td>
+      </tr>
+      
+      <tr>
+        <td align="right">Email-ID:<font color="red"><sup>*</sup></font></td>
+        <td align="left"><input type="text" maxlength="40" size="35" name="ename" /></td>
+      </tr>
+      
+      <tr>
+        <td align="right">Phone number:<font color="red"><sup>*</sup></font></td>
+        <td align="left"><input type="text" maxlength="40" size="35" name="phn" /></td>
+      </tr>
+      
+      <tr>
+        <td align="right">Languages known:</td>
+        <td align="left">
+          <input type="checkbox" name="hb" value="en" /> English
+          <input type="checkbox" name="hb" value="te" /> Telugu
+        </td>
+      </tr>
+      
+      <tr>
+        <td align="right">Address:<font color="red"><sup>*</sup></font></td>
+        <td align="left"><textarea rows="6" cols="20" name="add"></textarea></td>
+      </tr>
+      
+      <tr>
+        <td></td>
+        <td align="left"><input type="checkbox" name="xx" value="yy" /> I Agree with terms and Conditions</td>
+      </tr>
+      
+      <tr>
+        <td></td>
+        <td align="left"><input type="submit" value="SUBMIT" /></td>
+        <td align="right"><input type="reset" value="RESET" /></td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>
