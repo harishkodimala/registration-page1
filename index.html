@@ -1,92 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration Form</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
-    h2 { color: #333; }
-    form { background: #fff; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0px 2px 5px rgba(0,0,0,0.1);}
-    label { display: block; margin: 10px 0 5px; }
-    input, textarea, select { width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; }
-    input[type="radio"], input[type="checkbox"] { width: auto; margin-right: 10px; }
-    input[type="submit"] { background: #28a745; color: white; border: none; cursor: pointer; font-size: 16px; }
-    input[type="submit"]:hover { background: #218838; }
-  </style>
+  <meta charset="UTF-8" />
+  <title>REGISTRATION FORM</title>
+  <script src="form.js" defer></script>
 </head>
-<body>
-  <h2>Registration Form</h2>
+<body bgcolor="cyan">
+  <h2 align="center">ONLINE REGISTRATION</h2>
+  <hr align="center" width="100%" />
+
   <form name="regForm" onsubmit="return handleSubmit(event)">
-    <label>First Name:</label>
-    <input type="text" name="fname" required>
+    <table align="center" cellspacing="20">
+      <tr>
+        <td align="right">First name:<font color="red"><sup>*</sup></font></td>
+        <td align="left"><input type="text" maxlength="40" size="35" name="fname" /></td>
+      </tr>
 
-    <label>Last Name:</label>
-    <input type="text" name="lname" required>
+      <tr>
+        <td align="right">Last name:<font color="red"><sup>*</sup></font></td>
+        <td align="left"><input type="text" maxlength="40" size="35" name="lname" /></td>
+      </tr>
 
-    <label>Password:</label>
-    <input type="password" name="pw" required>
+      <tr>
+        <td align="right">PassWord:<font color="red"><sup>*</sup></font></td>
+        <td align="left"><input type="password" maxlength="40" size="35" name="pw" /></td>
+      </tr>
 
-    <label>Gender:</label>
-    <input type="radio" name="sex" value="Male" required> Male
-    <input type="radio" name="sex" value="Female"> Female
+      <tr>
+        <td align="right">Confirm Password:<font color="red"><sup>*</sup></font></td>
+        <td align="left"><input type="password" maxlength="40" size="35" name="cp" /></td>
+      </tr>
 
-    <label>Date of Birth:</label>
-    <input type="number" name="dob" placeholder="DD" min="1" max="31" required>
-    <input type="number" name="dob1" placeholder="MM" min="1" max="12" required>
-    <input type="number" name="dob3" placeholder="YYYY" min="1900" max="2099" required>
+      <tr>
+        <td align="right">Gender:</td>
+        <td>
+          <input type="radio" name="sex" value="male" /> Male
+          <input type="radio" name="sex" value="female" /> Female
+        </td>
+      </tr>
 
-    <label>Email:</label>
-    <input type="email" name="ename" required>
+      <tr>
+        <td align="right">DATE OF BIRTH:</td>
+        <td align="left">
+          <select name="dob">
+            <option value="">Month</option>
+            <option value="JAN">JAN</option>
+            <option value="FEB">FEB</option>
+            <option value="MAR">MAR</option>
+            <option value="APR">APR</option>
+            <option value="MAY">MAY</option>
+            <option value="JUN">JUN</option>
+            <option value="JUL">JUL</option>
+            <option value="AUG">AUG</option>
+            <option value="SEP">SEP</option>
+            <option value="OCT">OCT</option>
+            <option value="NOV">NOV</option>
+            <option value="DEC">DEC</option>
+          </select>
 
-    <label>Phone:</label>
-    <input type="tel" name="phn" pattern="[0-9]{10}" required>
+          <select name="dob1">
+            <option value="v">DAY</option>
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3">03</option>
+            <option value="4">04</option>
+            <option value="5">05</option>
+            <option value="6">06</option>
+            <option value="7">07</option>
+            <option value="8">08</option>
+            <option value="9">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+          </select>
 
-    <label>Languages Known:</label>
-    <input type="checkbox" name="hb" value="English"> English
-    <input type="checkbox" name="hb" value="Telugu"> Telugu
-    <input type="checkbox" name="hb" value="Hindi"> Hindi
+          <select name="dob3">
+            <option value="ram">YEAR</option>
+            <option value="2010">2010</option>
+            <option value="2009">2009</option>
+            <option value="2008">2008</option>
+            <option value="2007">2007</option>
+            <option value="2006">2006</option>
+            <option value="2005">2005</option>
+            <option value="2004">2004</option>
+            <option value="2003">2003</option>
+          </select>
+        </td>
+      </tr>
 
-    <label>Address:</label>
-    <textarea name="add" rows="3" required></textarea>
+      <tr>
+        <td align="right">Email-ID:<font color="red"><sup>*</sup></font></td>
+        <td align="left"><input type="text" maxlength="40" size="35" name="ename" /></td>
+      </tr>
 
-    <input type="submit" value="Submit">
+      <tr>
+        <td align="right">Phone number:<font color="red"><sup>*</sup></font></td>
+        <td align="left"><input type="text" maxlength="40" size="35" name="phn" /></td>
+      </tr>
+
+      <tr>
+        <td align="right">Languages known:</td>
+        <td align="left">
+          <input type="checkbox" name="hb" value="English" /> English
+          <input type="checkbox" name="hb" value="Telugu" /> Telugu
+        </td>
+      </tr>
+
+      <tr>
+        <td align="right">Address:<font color="red"><sup>*</sup></font></td>
+        <td align="left"><textarea rows="6" cols="20" name="add"></textarea></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td align="left"><input type="checkbox" name="xx" value="yy" /> I Agree with terms and Conditions</td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td align="left"><input type="submit" value="SUBMIT" /></td>
+        <td align="right"><input type="reset" value="RESET" /></td>
+      </tr>
+    </table>
   </form>
-
-  <script>
-    // ✅ Replace this with your Google Apps Script Web App URL
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzzVvFAZz_gLSjbTw22_xWUgwdrHtGEHe1fCpABVqaATADCosd0y8fMmsUnNhI_U22G/exec";
-
-    async function handleSubmit(event) {
-      event.preventDefault();
-      const form = document.forms["regForm"];
-      const data = {
-        fname: form["fname"].value,
-        lname: form["lname"].value,
-        pw: form["pw"].value,
-        sex: form["sex"].value,
-        dob: form["dob"].value + "-" + form["dob1"].value + "-" + form["dob3"].value,
-        email: form["ename"].value,
-        phone: form["phn"].value,
-        languages: [...form.querySelectorAll("input[name='hb']:checked")].map(el => el.value).join(","),
-        address: form["add"].value
-      };
-
-      try {
-        let response = await fetch(scriptURL, {
-          method: "POST",
-          body: JSON.stringify(data),
-          headers: { "Content-Type": "application/json" }
-        });
-        let result = await response.text();
-        alert("✅ Form submitted successfully!");
-        form.reset();
-      } catch (err) {
-        alert("❌ Error: " + err.message);
-      }
-      return false;
-    }
-  </script>
 </body>
 </html>
-
